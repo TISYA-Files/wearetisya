@@ -170,6 +170,11 @@ function doPost(e) {
       return respond({ success: false, error: 'Invalid JSON body.' });
     }
 
+    // ── 1.5 Handle Status Synchronization from Supabase ─────────
+    if (body.action === "sync_status" || body.action === "update_application") {
+      return handleStatusSync(body);
+    }
+
     var formType = body.formType;
     var data     = body.data || {};
 
@@ -204,11 +209,136 @@ function doPost(e) {
     // ── 5. Append row ────────────────────────────────────────────
     sheet.appendRow(row);
 
+    // ── 5.5 Forward to Supabase DEV Ingest Endpoint ──────────────
+    if (formType === 'Pathfinder' || formType === 'Volunteer') {
+      try {
+        var supabaseUrl = 'https://edsxgjdgqdiffhbeavah.supabase.co/functions/v1/ingest-application';
+        var secret = 'tisya_dev_ingest_sec_8849b2c3a5e142f7908b61c947d3e521';
+        var ingestPayload = {
+          formType: formType,
+          originalApplicationId: app_id,
+          submittedAt: new Date().toISOString(),
+          applicant: {
+            fullName: data.full_name || '',
+            email: data.email || '',
+            phone: data.contact_number || data.whatsapp_number || ''
+          },
+          data: data
+        };
+
+        var forwardRes = UrlFetchApp.fetch(supabaseUrl, {
+          method: 'post',
+          contentType: 'application/json',
+          headers: { 'x-ingest-secret': secret },
+          payload: JSON.stringify(ingestPayload),
+          muteHttpExceptions: true
+        });
+
+        var fText = forwardRes.getContentText();
+        var fJson = JSON.parse(fText);
+        if (fJson && fJson.applicationId) {
+          updateRowSyncColumns(sheet, sheet.getLastRow(), {
+            supabase_application_id: fJson.applicationId,
+            supabase_sync_status: fJson.created ? 'synced' : 'already_synced',
+            application_status: fJson.status || 'submitted',
+            tisya_id: '',
+            synced_at: submitted_at
+          });
+        }
+      } catch (fErr) {
+        console.warn('Supabase forward warning: ' + fErr);
+      }
+    }
+
     // ── 6. Return success ─────────────────────────────────────────
     return respond({ success: true, app_id: app_id });
 
   } catch (err) {
     return respond({ success: false, error: String(err.message || err) });
+  }
+}
+
+/**
+ * Handles incoming status updates from Supabase approval/rejection.
+ */
+function handleStatusSync(body) {
+  var targetAppId = body.originalApplicationId;
+  var targetSupabaseId = body.supabaseApplicationId;
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var tabs = ['Pathfinders', 'Pioneers'];
+
+  for (var t = 0; t < tabs.length; t++) {
+    var sheet = ss.getSheetByName(tabs[t]);
+    if (!sheet) continue;
+
+    var lastRow = sheet.getLastRow();
+    var lastCol = sheet.getLastColumn();
+    if (lastRow < 2) continue;
+
+    var headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+    var colMap = {};
+    for (var h = 0; h < headers.length; h++) {
+      colMap[headers[h]] = h + 1;
+    }
+
+    var appIdCol = colMap['app_id'] || 2;
+    var supabaseIdCol = colMap['supabase_application_id'];
+
+    var idRange = sheet.getRange(2, appIdCol, lastRow - 1, 1).getValues();
+    var supabaseIdRange = supabaseIdCol ? sheet.getRange(2, supabaseIdCol, lastRow - 1, 1).getValues() : null;
+
+    for (var r = 0; r < idRange.length; r++) {
+      var rowAppId = String(idRange[r][0] || '').trim();
+      var rowSupabaseId = supabaseIdRange ? String(supabaseIdRange[r][0] || '').trim() : '';
+
+      if ((targetAppId && rowAppId === targetAppId) || (targetSupabaseId && rowSupabaseId === targetSupabaseId)) {
+        var rowIndex = r + 2;
+
+        if (colMap['application_status']) {
+          sheet.getRange(rowIndex, colMap['application_status']).setValue(body.status || 'submitted');
+        }
+        if (colMap['tisya_id']) {
+          sheet.getRange(rowIndex, colMap['tisya_id']).setValue(body.tisyaId || '');
+        }
+        if (colMap['supabase_sync_status']) {
+          sheet.getRange(rowIndex, colMap['supabase_sync_status']).setValue('synced');
+        }
+        if (colMap['synced_at']) {
+          sheet.getRange(rowIndex, colMap['synced_at']).setValue(body.syncedAt || Utilities.formatDate(new Date(), 'GMT+3', 'yyyy-MM-dd HH:mm:ss'));
+        }
+
+        return respond({
+          success: true,
+          message: 'Sheet updated successfully',
+          tab: tabs[t],
+          row: rowIndex,
+          status: body.status,
+          tisya_id: body.tisyaId
+        });
+      }
+    }
+  }
+
+  return respond({
+    success: false,
+    error: 'Application ID not found in sheet tabs: ' + (targetAppId || targetSupabaseId)
+  });
+}
+
+function updateRowSyncColumns(sheet, rowIndex, values) {
+  try {
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var colMap = {};
+    for (var i = 0; i < headers.length; i++) {
+      colMap[headers[i]] = i + 1;
+    }
+    for (var key in values) {
+      if (colMap[key]) {
+        sheet.getRange(rowIndex, colMap[key]).setValue(values[key]);
+      }
+    }
+  } catch (e) {
+    console.warn('updateRowSyncColumns error: ' + e);
   }
 }
 
