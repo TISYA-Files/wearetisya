@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Shield, Zap, Star, Crosshair } from "lucide-reac
 import { useSound } from "@/contexts/SoundContext";
 import { useT } from "@/contexts/LanguageContext";
 
-type RolePath = "pioneers" | "members" | "ambassador" | "countryunion" | "partner";
+type RolePath = "pioneers" | "members" | "ambassador" | "partner";
 
 interface MissionBriefProps {
   role: RolePath;

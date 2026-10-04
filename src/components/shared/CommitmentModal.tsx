@@ -26,7 +26,6 @@ const CommitmentModal = ({
     switch (roleName) {
       case "Pioneer": return t.commitment.pioneer;
       case "Ambassador": return t.commitment.ambassador;
-      case "Country Union": return t.commitment.countryUnion;
       default: return t.commitment.default.replace("{role}", roleName);
     }
   };

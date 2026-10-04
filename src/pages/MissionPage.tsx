@@ -7,14 +7,13 @@ const MISSION_META: Record<string, { title: string; description: string }> = {
   pioneers: { title: "Pioneer Mission Brief — TİSYA", description: "Read the Pioneer (Volunteer) briefing and apply to contribute your skills to the TİSYA Alliance." },
   members: { title: "Pathfinder Mission Brief — TİSYA", description: "Read the Pathfinder (Member) briefing and join the core of the TİSYA Alliance." },
   ambassador: { title: "Ambassador Mission Brief — TİSYA", description: "Lead TİSYA presence in your country, campus, or community. Read the Ambassador briefing." },
-  countryunion: { title: "Country Union Brief — TİSYA", description: "Form a Country Union with TİSYA. Read the institutional briefing." },
   partner: { title: "Partner & Sponsor Brief — TİSYA", description: "Partner with or sponsor TİSYA. Read the briefing for organizations." },
 };
 
-type MissionRole = "pioneers" | "members" | "ambassador" | "countryunion" | "partner";
+type MissionRole = "pioneers" | "members" | "ambassador" | "partner";
 
 const isMissionRole = (v: string | undefined): v is MissionRole =>
-  v === "pioneers" || v === "members" || v === "ambassador" || v === "countryunion" || v === "partner";
+  v === "pioneers" || v === "members" || v === "ambassador" || v === "partner";
 
 const MissionPage = () => {
   const navigate = useNavigate();

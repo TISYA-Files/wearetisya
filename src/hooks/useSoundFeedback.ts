@@ -243,8 +243,8 @@ export const useSoundFeedback = () => {
     });
   }, []);
 
-  // Country Union - deep resonant gong/bell (institutional gravitas)
-  const playCountryUnionSelect = useCallback(() => {
+  // Partner - deep resonant gong/bell (institutional gravitas)
+  const playPartnerSelect = useCallback(() => {
     if (!isEnabledRef.current || !audioContextRef.current) return;
     const ctx = audioContextRef.current;
     const now = ctx.currentTime;
@@ -360,7 +360,7 @@ export const useSoundFeedback = () => {
     playPathfinderSelect,
     playPioneerSelect,
     playAmbassadorSelect,
-    playCountryUnionSelect,
+    playPartnerSelect,
     playInternSelect,
     playCelebration,
     playSliderTick,

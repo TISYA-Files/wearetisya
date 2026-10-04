@@ -150,23 +150,6 @@ const tr = {
       ],
       impact: "Elçiler ekosistemi şekillendirir — TİSYA'nın nasıl görüldüğünü ve deneyimlendiğini sen belirlersin.",
     },
-    countryunion: {
-      title: "Ülke Birliği",
-      tagline: "Birleştir. İşbirliği yap. Köprüler kur.",
-      mission: "Uzun vadeli işbirliği için ortaklıklara liderlik et ve organizasyonunun TİSYA ile bağlantısını temsil et.",
-      activities: [
-        "Ülke düzeyinde ortaklıklara ve programlara liderlik et",
-        "Ortak girişimler konusunda TİSYA liderliğiyle koordinasyon sağla",
-        "TİSYA yönetim yapısında organizasyonunu temsil et",
-        "Sınır ötesi öğrenci etkileşimini destekle",
-      ],
-      unlocks: [
-        "TİSYA ile yapısal ortaklık",
-        "Ortak programlama ve kaynak paylaşımı",
-        "TİSYA'nın yönetim yapısında temsil",
-      ],
-      impact: "Ülke Birlikleri sınırlar ötesinde kalıcı kurumsal köprüler oluşturur.",
-    },
     partner: {
       title: "Partner / Sponsor",
       tagline: "Destekle. Güçlendir. Birlikte etki yarat.",
@@ -533,44 +516,6 @@ const tr = {
     referenceId: "Referans Kimliğin",
   },
 
-  // ===== COUNTRY UNION FORM =====
-  countryUnionForm: {
-    title: "Kuruluşunuzu Kaydedin",
-    subtitle: "TİSYA ile yapısal bir bağ kurmak isteyen ülke birlikleri, STK'lar, akademik kurumlar ve gençlik örgütleri için. Bu bir sponsorluk formu değildir — uzun vadeli ortaklık hakkındadır.",
-    orgName: "Kuruluş Adı",
-    orgNamePlaceholder: "Kuruluşunuzun adı",
-    country: "Ülke",
-    city: "Şehir",
-    cityPlaceholder: "Şehir",
-    orgType: "Kuruluş Türü",
-    orgTypePlaceholder: "Tür seçin",
-    contactName: "İlgili Kişinin Adı",
-    contactNamePlaceholder: "Birincil iletişim kişisinin adı",
-    contactEmail: "İletişim E-postası",
-    contactEmailPlaceholder: "iletisim@kurulus.com",
-    contactPhone: "İletişim Telefonu",
-    contactPhonePlaceholder: "+90 5XX XXX XXXX",
-    website: "Web Sitesi",
-    websitePlaceholder: "https://kurulusunuz.org",
-    scopeOfWork: "Çalışma Kapsamı",
-    scopeOfWorkPlaceholder: "Kuruluşunuz ne yapıyor? Ana faaliyetler ve odak alanları...",
-    whyAffiliate: "Neden TİSYA ile bağ kurmak istiyorsunuz?",
-    whyAffiliatePlaceholder: "Bu ortaklık için vizyonunuzu paylaşın...",
-    studentChallenges: "Ülkenizden gelen öğrenciler Türkiye'de hangi zorluklarla karşılaşıyor?",
-    studentChallengesPlaceholder: "Barınma, dil engelleri, kültürel uyum, topluluk eksikliği — dürüst olun.",
-    firstSteps: "Onaylanırsa, TİSYA ile işbirliğinde ilk adımlarınız neler olurdu?",
-    firstStepsPlaceholder: "Sosyal yardım planı, etkinlik fikirleri, topluluk oluşturma — ilk 30 günde ne yapardınız?",
-    consentLabel: "TİSYA'nın bu verileri ortaklık amacıyla saklamasına izin veriyorum.",
-    successTitle: "Kayıt Alındı!",
-    successMessage: "Kuruluşunuzu kaydettiğiniz için teşekkür ederiz. Ekibimiz başvurunuzu inceleyecek ve sonraki adımları görüşmek üzere sizinle iletişime geçecektir.",
-    orgTypes: {
-      youthOrg: "Gençlik Örgütü",
-      union: "Birlik",
-      ngo: "STK",
-      academicInst: "Akademik Kurum",
-      other: "Diğer"
-    }
-  },
 
   
   // ===== PARTNER SPONSOR FORM =====
@@ -724,7 +669,6 @@ const tr = {
     agreeCommitment: "TİSYA {role} Taahhüdünü kabul ediyorum",
     pioneer: "Bir TİSYA Fırsatçısı olarak, sürekli katılım sağlamayı, ekibimle proaktif iletişim kurmayı, atanan görevleri zamanında tamamlamayı ve tüm etkileşimlerde TİSYA'yı dürüstlükle temsil etmeyi taahhüt ediyorum.",
     ambassador: "Bir TİSYA Elçisi olarak, TİSYA'yı belirlenen kapsamda aktif olarak temsil etmeyi, ağımla gerçekçi bir şekilde etkileşim kurmayı, ilerlemeyi düzenli olarak raporlamayı ve TİSYA'nın değerlerini ve misyonunu desteklemeyi taahhüt ediyorum.",
-    countryUnion: "Bir TİSYA Ülke Birliği iştiraki olarak, kuruluşumuz uzun vadeli yapısal işbirliği, şeffaf iletişim, ortak programlama çabaları ve TİSYA'nın misyonuna ve kurallarına karşılıklı saygı taahhüt eder.",
     default: "Bir TİSYA {role} olarak, bu rolün değerlerini, sorumluluklarını ve beklentilerini desteklemeyi taahhüt ediyorum.",
   },
 

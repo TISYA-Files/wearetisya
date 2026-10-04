@@ -356,7 +356,7 @@ const RoleSelection = ({
     playHover,
     playPathfinderSelect,
     playPioneerSelect,
-    playCountryUnionSelect,
+    playPartnerSelect,
     playInternSelect,
   } = useSound();
 
@@ -408,7 +408,7 @@ const RoleSelection = ({
       description: t.roles.partner.description,
       image: partnerBg,
       onClick: () => {
-        playCountryUnionSelect();
+        playPartnerSelect();
         onSelectPartner();
       },
       hoverSound: playHover,

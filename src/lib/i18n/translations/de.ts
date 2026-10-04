@@ -150,23 +150,6 @@ const de = {
       ],
       impact: "Botschafter formen das Ökosystem — du bestimmst, wie TİSYA wahrgenommen und erlebt wird.",
     },
-    countryunion: {
-      title: "Länderunion",
-      tagline: "Vereinen. Zusammenarbeiten. Brücken bauen.",
-      mission: "Leite Partnerschaften und vertrete die Zugehörigkeit deiner Organisation zu TISYA für eine langfristige Zusammenarbeit.",
-      activities: [
-        "Partnerschaften und Programme auf Landesebene leiten",
-        "Mit TISYA-Führung bei gemeinsamen Initiativen koordinieren",
-        "Deine Organisation in der TISYA-Governance-Struktur vertreten",
-        "Grenzüberschreitendes Studentenengagement unterstützen",
-      ],
-      unlocks: [
-        "Strukturelle Partnerschaft mit TISYA",
-        "Gemeinsame Programme und gemeinsame Nutzung von Ressourcen",
-        "Vertretung in der Governance-Struktur von TISYA",
-      ],
-      impact: "Länderunionen schaffen dauerhafte institutionelle Brücken über Grenzen hinweg.",
-    },
     partner: {
       title: "Partner / Sponsor",
       tagline: "Unterstützen. Stärken. Gemeinsam Wirkung erzielen.",
@@ -533,44 +516,6 @@ const de = {
     referenceId: "Deine Referenz-ID",
   },
 
-  // ===== COUNTRY UNION FORM =====
-  countryUnionForm: {
-    title: "Registriere deine Organisation",
-    subtitle: "Für Länderunionen, NGOs, akademische Einrichtungen und Jugendorganisationen, die eine strukturelle Zugehörigkeit zu TİSYA anstreben. Kein Sponsoringformular — hier geht es um langfristige Partnerschaft.",
-    orgName: "Name der Organisation",
-    orgNamePlaceholder: "Name deiner Organisation",
-    country: "Land",
-    city: "Stadt",
-    cityPlaceholder: "Stadt",
-    orgType: "Art der Organisation",
-    orgTypePlaceholder: "Art auswählen",
-    contactName: "Kontaktperson",
-    contactNamePlaceholder: "Name der primären Kontaktperson",
-    contactEmail: "Kontakt-E-Mail",
-    contactEmailPlaceholder: "kontakt@org.com",
-    contactPhone: "Kontakttelefon",
-    contactPhonePlaceholder: "+49 1XX XXX XXXX",
-    website: "Website",
-    websitePlaceholder: "https://deineorganisation.org",
-    scopeOfWork: "Arbeitsbereich",
-    scopeOfWorkPlaceholder: "Was macht deine Organisation? Hauptaktivitäten und Schwerpunkte...",
-    whyAffiliate: "Warum möchtest du dich TİSYA anschließen?",
-    whyAffiliatePlaceholder: "Teile deine Vision für diese Zugehörigkeit...",
-    studentChallenges: "Mit welchen Herausforderungen sind Studenten aus deinem Land in der Türkei konfrontiert?",
-    studentChallengesPlaceholder: "Wohnen, Sprachbarrieren, kulturelle Anpassung, mangelnde Gemeinschaft — sei realistisch.",
-    firstSteps: "Wenn genehmigt, was wären deine ersten Schritte in der Zusammenarbeit mit TİSYA?",
-    firstStepsPlaceholder: "Outreach-Plan, Veranstaltungsideen, Gemeinschaftsaufbau — was würdest du in den ersten 30 Tagen tun?",
-    consentLabel: "Ich stimme zu, dass TİSYA diese Daten zu Zugehörigkeitszwecken speichert.",
-    successTitle: "Registrierung erhalten!",
-    successMessage: "Danke für die Registrierung deiner Organisation. Unser Team wird deine Einreichung prüfen und sich bezüglich der nächsten Schritte melden.",
-    orgTypes: {
-      youthOrg: "Jugendorganisation",
-      union: "Union",
-      ngo: "NGO",
-      academicInst: "Akademische Einrichtung",
-      other: "Andere"
-    }
-  },
 
   
   // ===== PARTNER SPONSOR FORM =====
@@ -724,7 +669,6 @@ const de = {
     agreeCommitment: "Ich stimme der TISYA {role}-Verpflichtung zu",
     pioneer: "Als TISYA-Möglichkeitsmacher verpflichte ich mich, beständig präsent zu sein, proaktiv mit meinem Team zu kommunizieren, zugewiesene Aufgaben pünktlich zu erledigen und TISYA in allen Interaktionen mit Integrität zu vertreten.",
     ambassador: "Als TISYA-Botschafter verpflichte ich mich, TISYA in meinem vorgesehenen Rahmen aktiv zu vertreten, mein Netzwerk authentisch einzubinden, regelmäßig über Fortschritte zu berichten und die Werte und die Mission von TISYA aufrechtzuerhalten.",
-    countryUnion: "Als TISYA Länderunions-Partnerorganisation verpflichtet sich unsere Organisation zu langfristiger struktureller Zusammenarbeit, transparenter Kommunikation, gemeinsamen Programmbemühungen und gegenseitigem Respekt für die Mission und Richtlinien von TISYA.",
     default: "Als TISYA {role} verpflichte ich mich, die Werte, Verantwortlichkeiten und Erwartungen dieser Rolle zu wahren.",
   },
 

@@ -150,23 +150,6 @@ const en = {
       ],
       impact: "Ambassadors shape the ecosystem — you define how TİSYA is seen and experienced.",
     },
-    countryunion: {
-      title: "Country Union",
-      tagline: "Unite. Collaborate. Build bridges.",
-      mission: "Lead partnerships and represent your organization's affiliation with TISYA for long-term collaboration.",
-      activities: [
-        "Lead country-level partnerships and programs",
-        "Coordinate with TISYA leadership on joint initiatives",
-        "Represent your organization within the TISYA governance structure",
-        "Support cross-border student engagement",
-      ],
-      unlocks: [
-        "Structural partnership with TISYA",
-        "Joint programming and resource sharing",
-        "Representation in TISYA's governance structure",
-      ],
-      impact: "Country Unions create lasting institutional bridges across borders.",
-    },
     partner: {
       title: "Partner / Sponsor",
       tagline: "Support. Empower. Create impact together.",
@@ -533,44 +516,6 @@ const en = {
     referenceId: "Your Reference ID",
   },
 
-  // ===== COUNTRY UNION FORM =====
-  countryUnionForm: {
-    title: "Register Your Organization",
-    subtitle: "For country unions, NGOs, academic institutions, and youth organizations seeking structural affiliation with TİSYA. Not a sponsorship form — this is about long-term partnership.",
-    orgName: "Organization Name",
-    orgNamePlaceholder: "Your organization's name",
-    country: "Country",
-    city: "City",
-    cityPlaceholder: "City",
-    orgType: "Organization Type",
-    orgTypePlaceholder: "Select type",
-    contactName: "Contact Person Name",
-    contactNamePlaceholder: "Primary contact name",
-    contactEmail: "Contact Email",
-    contactEmailPlaceholder: "contact@org.com",
-    contactPhone: "Contact Phone",
-    contactPhonePlaceholder: "+1 234 567 8900",
-    website: "Website",
-    websitePlaceholder: "https://yourorganization.org",
-    scopeOfWork: "Scope of Work",
-    scopeOfWorkPlaceholder: "What does your organization do? Main activities and focus areas...",
-    whyAffiliate: "Why do you want to affiliate with TİSYA?",
-    whyAffiliatePlaceholder: "Share your vision for this affiliation...",
-    studentChallenges: "What challenges do students from your country face in Türkiye?",
-    studentChallengesPlaceholder: "Housing, language barriers, cultural adjustment, lack of community — be real about it.",
-    firstSteps: "If approved, what would your first steps be in collaboration with TİSYA?",
-    firstStepsPlaceholder: "Outreach plan, event ideas, community building — what would you do in the first 30 days?",
-    consentLabel: "I consent to TİSYA storing this data for affiliation purposes.",
-    successTitle: "Registration Received!",
-    successMessage: "Thank you for registering your organization. Our team will review your submission and reach out to discuss next steps.",
-    orgTypes: {
-      youthOrg: "Youth Organization",
-      union: "Union",
-      ngo: "NGO",
-      academicInst: "Academic Institution",
-      other: "Other"
-    }
-  },
 
   
   // ===== PARTNER SPONSOR FORM =====
@@ -724,7 +669,6 @@ const en = {
     agreeCommitment: "I agree to the TİSYA {role} Commitment",
     pioneer: "As a TİSYA Pioneer, I commit to showing up consistently, communicating proactively with my team, completing assigned tasks on time, and representing TİSYA with integrity in all interactions.",
     ambassador: "As a TİSYA Ambassador, I commit to actively representing TİSYA in my designated scope, engaging my network authentically, reporting progress regularly, and upholding the values and mission of TİSYA.",
-    countryUnion: "As a TİSYA Country Union affiliate, our organization commits to long-term structural collaboration, transparent communication, shared programming efforts, and mutual respect for TİSYA's mission and guidelines.",
     default: "As a TİSYA {role}, I commit to upholding the values, responsibilities, and expectations of this role.",
   },
 
