@@ -51,6 +51,16 @@ npm install
 npm run dev
 ```
 
+## Deploy to Cloudflare Workers
+
+This project can be deployed directly with Wrangler and does not require a Git connection in Cloudflare. Authenticate once with `npx wrangler@4 login`, then run:
+
+```sh
+npm run deploy
+```
+
+For automated deployments, set `CLOUDFLARE_API_TOKEN` in the environment before running `npm run deploy`. The token needs permission to edit Workers and Pages, and the account must be selected if it is not already configured.
+
 ## Project Structure
 
 ```
